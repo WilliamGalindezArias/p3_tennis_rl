@@ -8,8 +8,8 @@
 1. Introduction
 2. Learning Algorithm 
 3. Hyper-parameters
-4. Experimentation
-5. Implementation and plot of rewards
+4. Experimentation and plot of rewards
+5. Future Work and ideas 
 
 
 #### 1. Introduction
@@ -71,6 +71,7 @@ the general layer or networks architecture consist of fully connected layers wit
 
 **Hyper-parameters**
 
+The following hyperparameters are the ones used in the final solution implemented
 ``` 
 BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 128        # minibatch size
@@ -81,3 +82,25 @@ LR_CRITIC = 1e-4        # learning rate of the critic
 WEIGHT_DECAY = 0.000    # L2 weight decay
 UPDATE_EVERY = 1        # how often to update the networks
 ``` 
+
+### 4. Experimentation and plot of rewards
+
+As briefly explained in the changes applied to DDPG,there was some experimentation and tunning to the algorithm to adjust it for the task in hand. One of the preliminary adjustments aiming at improving the stability of the learning algorithm included changing the buffer size and use different learning rates for the *Actor* and *Critic* networks, such experiments gave results that can be exemplified in the following plot: 
+<img width="493" alt="Screen Shot 2021-07-23 at 4 15 52 PM" src="https://user-images.githubusercontent.com/25883464/126795124-55c4e5ed-f032-4d1f-843c-c50884d2c9c5.png">
+
+By observing the behaviour of the algorithm, and its tendency to aparently converge and then degrading its performance after 1k episodes, it made sense to use a smaller sample size for the replay buffer ad diminish the learning rate.
+
+**Solution Implemented* 
+
+Utilizing the network architecture explained in this report along with the learning algorithm, the final plot of rewards obtained is as follows:
+
+![Screen Shot 2021-07-23 at 4 20 59 PM](https://user-images.githubusercontent.com/25883464/126795851-36ed5a1a-908e-4536-a74a-899332ff2780.png)
+
+
+Which fullfills the requeriments for acceptance (100 episodes and average score > 0.5)
+
+``` Average Score: 0.501 Environment solved in 816 episodes, Average Score: 0.5014000075124204 ```
+
+### 5. Future work and ideas
+
+To improve the scores and stability of the agents, possible improvements can include the usage of Noisy Layers instead of action noise and ensemble methods or Agents with Policy Ensembles https://papers.nips.cc/paper/2017/file/68a9750337a418a86fe06c1991a1d64c-Paper.pdf
