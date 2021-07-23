@@ -46,7 +46,7 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 #### 1. Train the agent
 
-To train the agent follow the steps in the Jupyter Notebool `Tennis.ipynb`, you might choose to just execute and test the agent by skipping training and using the preuploaded weights.
+To train the agent follow the steps in the Jupyter Notebool `Tennis-rl.ipynb`, you might choose to just execute and test the agent by skipping training and using the preuploaded weights.
 
 
 
