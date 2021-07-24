@@ -40,6 +40,45 @@ The environment is considered solved, when the average (over 100 episodes) of th
    virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions
    to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)
    , and then download the environment for the **Linux** operating system above._)
+   
+### Dependencies
+
+To set up your python environment to run the code in this repository, follow the instructions below.
+
+1. Create (and activate) a new environment with Python 3.6
+
+- **Linux or Mac**
+```
+conda create --name [YOUR_ENV_NAME] python=3.6
+source activate [YOUR_ENV_NAME]
+```
+- **Windows**
+
+```
+conda create --name [YOUR_ENV_NAME] python=3.6
+activate [YOUR_ENV_NAME]
+```
+
+2. Follow the instructions in [this repository](https://github.com/openai/gym) to perform a minimal install of OpenAI gym.  
+	- Next, install the **classic control** environment group by following the instructions [here](https://github.com/openai/gym#classic-control).
+	- Then, install the **box2d** environment group by following the instructions [here](https://github.com/openai/gym#box2d).
+	
+3. Clone the repository (if you haven't already!), and navigate to the `python/` folder.  Then, install several dependencies.
+```bash
+git clone https://github.com/udacity/deep-reinforcement-learning.git
+cd deep-reinforcement-learning/python
+pip install .
+```
+
+4. Create an [IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) for the `drlnd` or `[YOUR_ENV]` environment.  
+```bash
+python -m ipykernel install --user --name drlnd --display-name "drlnd"
+```
+
+5. Before running code in a notebook, change the kernel to match the `drlnd` or the given name you selected for the environment by using the drop-down `Kernel` menu. 
+
+<img width="250" alt="kernel" src="https://user-images.githubusercontent.com/25883464/123826016-addaf480-d8ff-11eb-991b-7a41ea512027.png">
+
 
 2. Place the file in the root directory of this GitHub repository and unzip (or decompress) the file.
 
